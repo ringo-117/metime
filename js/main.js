@@ -31,8 +31,8 @@ $('#nav_list a[href]').on('click', function() {
 // スクロール時のヘッダー表示制御
 $(window).on('load scroll', function() {
     const scrollPosition = $(this).scrollTop();
-    $('.home_header').toggleClass('is-show', scrollPosition > 500);
-    $('#TOP_img, #TOP_title_h1, #TOP_title_p').toggleClass('is-show', scrollPosition > -1);
+    $('.home_header, .line_button').toggleClass('is-show', scrollPosition > 500);
+    $('#TOP_img, #TOP_title_h1, #TOP_title_p, #line_btn').toggleClass('is-show', scrollPosition > -1);
     $('#info_text, #menu_text').toggleClass('is-show', scrollPosition > -1);
 });
 
