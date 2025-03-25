@@ -287,7 +287,7 @@ body {
     height: 80px;
     right: 15px;
     bottom:20px;
-    z-index: 10;
+    z-index: 999;
   }
 
   #line_button {
@@ -1526,7 +1526,6 @@ body {
     height: 98px;
     right: 35px;
     bottom: 40px;
-    z-index: 20;
   }
 
   /* ==================== MOVIE ================== */
@@ -1599,6 +1598,10 @@ body {
     margin: 0;
     justify-content: start;
     width: 50vw;
+  }
+
+  .ABOUT .sec_img {
+    transform: 50%;
   }
 
   .INFO .sec_img {
@@ -1917,6 +1920,15 @@ body {
     letter-spacing: 0.05em;
   }
 
+}
+
+@media (min-width: 601px) and (max-width: 784px) {
+  /* タブレット用レイアウト 601px以上786px以下の範囲に収めるデザインはこの中に記述 */
+  /* TOP_ABOUTの画像に関してのCSS */
+  .ABOUT .sec_img figure {
+    max-width: 190px;
+    max-height: 275px;
+  }
 }
 
 
