@@ -207,7 +207,7 @@ body {
     grid-template-rows: auto 150px;
     /* height: calc(var(--vh, 1vh) * 100); */
     padding: 10px 10px 0;
-    height: 100vh;
+    height: 100svh;
     max-height: 645px;
   }
 
