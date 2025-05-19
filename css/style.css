@@ -241,7 +241,7 @@ body {
   }
 
   .TOP figure.TOP_img img {
-    min-height: 485px;
+    /* min-height: 485px; */
     overflow: hidden;
   }
 
