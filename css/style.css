@@ -242,12 +242,12 @@ body {
 
   .TOP figure.TOP_img img {
     min-height: 485px;
+    overflow: hidden;
   }
 
   .TOP figure {
     overflow: hidden;
   }
-
 
   .TOP_title {
     display: flex;
