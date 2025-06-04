@@ -372,10 +372,14 @@ body {
   }
 
   .movie_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     height: calc(100vh + 60px);
     background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
   }
 
   .modal_movie iframe {
