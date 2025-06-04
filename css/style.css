@@ -17,7 +17,7 @@ body {
 }
 
 @media screen and (min-width: 320px) {
-  /* タブレット用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
+  /* スマホ用レイアウト 320px以上の範囲に収めるデザインはこの中に記述 */
 
   /* ==================== ヘッダー ================== */
   .pc_nav {
@@ -297,7 +297,7 @@ body {
     height: 80px;
     right: 15px;
     bottom:20px;
-    z-index: 997;
+    z-index: 995;
   }
 
   #line_button {
@@ -1021,8 +1021,9 @@ body {
     line-height: 2em;
   }
 
-  .menu_other .menu_info_02 {
-    margin-bottom: 20px;
+  .menu_other .menu_info_02,
+  .menu_5 .menu_info_02 {
+    margin-bottom: 4px;
   }
 
   .menu_other .menu_info_02 span {
@@ -1510,6 +1511,11 @@ body {
     font-size: 20px;
   }
 
+  /* .nav_list {
+    margin-bottom: 30px;
+    margin-top: 0px;
+  } */
+
   /* ==================== TOP ================== */
   .TOP {
     padding: 17px 17px 0;
@@ -1878,6 +1884,11 @@ body {
 
   .menu_info_02 {
     letter-spacing: 0.1em;
+  }
+
+  .menu_other .menu_info_02,
+  .menu_5 .menu_info_02 {
+    margin-bottom: 12px;
   }
 
   .process_btn {

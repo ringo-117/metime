@@ -1,31 +1,47 @@
+document.querySelectorAll(".movie").forEach(movieContainer => {
+  const openBtn = movieContainer.querySelector(".modal_open_movie");
+  const modal = movieContainer.querySelector(".modal_movie");
+  const iframe = modal.querySelector("iframe");
+  const closeBtn = modal.querySelector("span");
+  const bg = modal.querySelector(".movie_bg");
 
-// 　MOVIE
-document.querySelectorAll(".modal_open_movie").forEach
-((video) => {
-	video.onclick = () => {
-		document.querySelector(".modal_movie").style.
-		display = "block";
-		document.querySelector(".modal_movie iframe").style.
-		display = "block";
-		document.querySelector(".modal_movie iframe").play();
-	}
-});
-const span = (document.querySelector(".modal_movie span").onclick = () => {
-	document.querySelector(".modal_movie").style.
-	display = "none";
-	document.querySelector(".modal_movie iframe").style.
-	display = "none";
-	document.querySelector(".modal_movie iframe").style.
-	autoplay = "0";
-	document.querySelector(".modal_movie iframe").pause();
-});
-const div = (document.querySelector(".modal_movie div").onclick = () => {
-	document.querySelector(".modal_movie").style.
-	display = "none";
-	document.querySelector(".modal_movie iframe").style.
-	display = "none";
-	document.querySelector(".modal_movie iframe").style.
-	autoplay = "0";
-	document.querySelector(".modal_movie iframe").pause();
-});
+  // モーダルを開く
+  openBtn.onclick = () => {
+    modal.style.display = "block";
+    iframe.style.display = "block";
 
+    // iframe.srcの元URLをきれいにしてからautoplayを追加
+    let baseSrc = iframe.dataset.src || iframe.src;
+    baseSrc = baseSrc.replace("?autoplay=1", "").replace("&autoplay=1", "");
+
+    iframe.src = ""; // リセット（Chrome対応）
+    iframe.src = baseSrc + (baseSrc.includes("?") ? "&" : "?") + "autoplay=1";
+
+    // --- スクロール禁止にする ---
+    document.body.style.overflow = "hidden";
+  };
+
+  // モーダルを閉じる（×ボタン）
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    iframe.style.display = "none";
+    const src = iframe.src;
+    iframe.src = ""; // リセット
+    iframe.src = src.replace("&autoplay=1", ""); // autoplay削除
+
+    // --- スクロール復活させる ---
+    document.body.style.overflow = "";
+  };
+
+  // モーダルを閉じる（背景クリック）
+  bg.onclick = () => {
+    modal.style.display = "none";
+    iframe.style.display = "none";
+    const src = iframe.src;
+    iframe.src = "";
+    iframe.src = src.replace("&autoplay=1", "");
+
+    // --- スクロール復活させる ---
+    document.body.style.overflow = "";
+  };
+});
